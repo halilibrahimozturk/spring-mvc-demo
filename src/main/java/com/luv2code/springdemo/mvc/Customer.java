@@ -8,12 +8,17 @@ public class Customer {
     @Size(min = 1, message = "size does not match")
     private String lastName;
 
-    @Min(value = 0,message = "it must be greater than or equal to 0")
-    @Max(value = 10,message = "it must be smaller than or equal to 10")
-    private int freePasses;
 
-    @Pattern(regexp = "^[a-zA-Z0-9]{5}",message = "only 5 digits or characters")
+    @NotNull(message="its required")
+    @Min(value = 0, message = "it must be greater than or equal to 0")
+    @Max(value = 10, message = "it must be smaller than or equal to 10")
+    private Integer freePasses;
+
+
+    @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 digits or characters")
     private String postalCode;
+
+
 
     public String getFirstName() {
         return firstName;
@@ -31,11 +36,11 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public int getFreePasses() {
+    public Integer getFreePasses() {
         return freePasses;
     }
 
-    public void setFreePasses(int freePasses) {
+    public void setFreePasses(Integer freePasses) {
         this.freePasses = freePasses;
     }
 
