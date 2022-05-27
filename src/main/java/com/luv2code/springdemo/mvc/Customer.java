@@ -1,5 +1,7 @@
 package com.luv2code.springdemo.mvc;
 
+import validation.CourseCode;
+
 import javax.validation.constraints.*;
 
 public class Customer {
@@ -9,16 +11,26 @@ public class Customer {
     private String lastName;
 
 
-    @NotNull(message="its required")
+    @NotNull(message = "its required")
     @Min(value = 0, message = "it must be greater than or equal to 0")
     @Max(value = 10, message = "it must be smaller than or equal to 10")
     private Integer freePasses;
 
 
-    @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 digits or characters")
+    @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 digits or character s")
     private String postalCode;
 
 
+    @CourseCode(value = "LUV",message = "it must start with 'LUV'")
+    private String courseCode;
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
+    }
 
     public String getFirstName() {
         return firstName;
