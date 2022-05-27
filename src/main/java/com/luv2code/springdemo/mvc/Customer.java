@@ -21,7 +21,7 @@ public class Customer {
     private String postalCode;
 
 
-    @CourseCode(value = "LUV",message = "it must start with 'LUV'")
+    @CourseCode(value = "TOPS",message = "it must start with 'LUV'")
     private String courseCode;
 
     public String getCourseCode() {
